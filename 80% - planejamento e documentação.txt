@@ -1,0 +1,7 @@
+80% - planejamento e documentação
+
+20% - Código
+
+Sistema web simples para vendas
+
+Entregas: Banco de dados, Documentação (README.md), prototipagem, regras de negocio, levantamento de requisitos, style css padrão para todos
