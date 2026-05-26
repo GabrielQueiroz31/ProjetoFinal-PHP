@@ -19,8 +19,6 @@ O objetivo do projeto é criar um sistema simples de controle de clientes, produ
 - PHP
 - Postgres
 
-## Protótipo Figma
-
 ## Protótipo no Figma
 
 O protótipo de baixa fidelidade das telas do sistema foi desenvolvido no Figma. Você pode acessar no link abaixo:
