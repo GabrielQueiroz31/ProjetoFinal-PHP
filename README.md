@@ -1,4 +1,5 @@
 # Documentação de Especificações de Requisito de Software (SRS)
+
 Documento baseado na ISO/IEEE 29148:2018
 
 ## Sistema de Controle de Loja de Bicicletas (GaluBikeShop)
@@ -16,9 +17,9 @@ Documento baseado na ISO/IEEE 29148:2018
 
 Este documento descreve os requisitos do sistema **GaluBikeShop**, com objetivo de:
 
-* definir funcionalidades
-* padronizar entendimento entre stakeholders
-* servir como base para desenvolvimento e testes
+- definir funcionalidades;
+- padronizar entendimento entre stakeholders;
+- servir como base para desenvolvimento e testes.
 
 ---
 
@@ -26,35 +27,35 @@ Este documento descreve os requisitos do sistema **GaluBikeShop**, com objetivo 
 
 O sistema permitirá:
 
-* cadastro e autenticação de clientes e administradores
-* cadastro, listagem, edição e exclusão de produtos
-* registro de vendas com atualização automática de estoque
-* acesso a painel administrativo restrito
+- cadastro e autenticação de clientes e administradores;
+- cadastro, listagem, edição e exclusão de produtos;
+- registro de vendas com atualização automática de estoque;
+- acesso a painel administrativo restrito.
 
 O sistema será uma aplicação web utilizando:
 
-* HTML
-* CSS
-* PHP
-* PostgreSQL
+- HTML;
+- CSS;
+- PHP;
+- PostgreSQL.
 
 ---
 
 ### 1.3 Definições
 
-| Termo          | Definição                                              |
-| -------------- | ------------------------------------------------------ |
-| Produto        | Item comercializado na loja de bicicletas              |
-| Venda          | Registro de saída de produto associado a um cliente    |
-| Estoque        | Quantidade disponível de produtos                      |
-| Cliente        | Usuário que realiza compras no sistema                 |
-| Administrador  | Usuário com acesso total ao painel administrativo      |
+| Termo | Definição |
+| --- | --- |
+| Produto | Item comercializado na loja de bicicletas |
+| Venda | Registro de saída de produto associado a um cliente |
+| Estoque | Quantidade disponível de produtos |
+| Cliente | Usuário que realiza compras no sistema |
+| Administrador | Usuário com acesso total ao painel administrativo |
 
 **Acrônimos:**
 
-* **SGQ** — Sistema de Gestão da GaluBikeShop
-* **RF** — Requisito Funcional
-* **RNF** — Requisito Não-Funcional
+- **SGQ** — Sistema de Gestão da GaluBikeShop
+- **RF** — Requisito Funcional
+- **RNF** — Requisito Não Funcional
 
 ---
 
@@ -62,11 +63,11 @@ O sistema será uma aplicação web utilizando:
 
 Este documento está organizado em:
 
-* introdução e visão geral
-* descrição do sistema
-* requisitos detalhados
-* modelos UML
-* regras de negócio
+- introdução e visão geral;
+- descrição do sistema;
+- requisitos detalhados;
+- modelos UML;
+- regras de negócio.
 
 ---
 
@@ -90,41 +91,41 @@ flowchart LR
 
 O sistema deve:
 
-* cadastrar e autenticar clientes e administradores
-* cadastrar, listar, editar e excluir produtos
-* registrar vendas vinculadas a clientes e produtos
-* atualizar o estoque após cada venda
-* restringir o acesso ao painel administrativo
+- cadastrar e autenticar clientes e administradores;
+- cadastrar, listar, editar e excluir produtos;
+- registrar vendas vinculadas a clientes e produtos;
+- atualizar o estoque após cada venda;
+- restringir o acesso ao painel administrativo.
 
 ---
 
 ### 2.3 Classes de Usuários
 
-| Usuário        | Descrição                                                    |
-| -------------- | ------------------------------------------------------------ |
-| Cliente        | Pode se cadastrar, fazer login e visualizar produtos         |
-| Administrador  | Gerencia produtos, clientes, vendas e acessa painel admin    |
+| Usuário | Descrição |
+| --- | --- |
+| Cliente | Pode se cadastrar, fazer login e visualizar produtos |
+| Administrador | Gerencia produtos, clientes, vendas e acessa painel admin |
 
 ---
 
 ### 2.4 Ambiente Operacional
 
-* Navegador web (Chrome, Edge, Firefox)
-* Servidor com suporte a PHP
-* Banco de dados PostgreSQL
+- Navegador web (Chrome, Edge, Firefox);
+- Servidor com suporte a PHP;
+- Banco de dados PostgreSQL.
 
 ---
 
 ### 2.5 Restrições
 
-* Clientes não têm acesso ao painel administrativo
-* Administradores são cadastrados diretamente no banco de dados
-* Sessões PHP controlam o acesso às áreas protegidas
+- Clientes não têm acesso ao painel administrativo;
+- Administradores são cadastrados diretamente no banco de dados;
+- Sessões PHP controlam o acesso às áreas protegidas.
 
 ### 2.6 Suposições
 
-* O usuário possui conhecimentos básicos de informática
-* O volume de dados é pequeno a médio
+- O usuário possui conhecimentos básicos de informática;
+- O volume de dados é pequeno a médio.
 
 ---
 
@@ -134,7 +135,7 @@ O sistema deve:
 
 #### RF-001: Cadastro de Cliente
 
-**Descrição:** Permitir que um novo cliente se cadastre no sistema
+**Descrição:** Permitir que um novo cliente se cadastre no sistema.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -142,6 +143,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 001
 
 **Critérios de Aceitação:**
+
 - [ ] Entrada de dados: Nome, E-mail, Telefone, Senha
 - [ ] Validação de campos obrigatórios
 - [ ] Verificação de duplicidade de e-mail
@@ -151,7 +153,7 @@ O sistema deve:
 
 #### RF-002: Login de Cliente
 
-**Descrição:** Permitir que clientes cadastrados façam login no sistema
+**Descrição:** Permitir que clientes cadastrados façam login no sistema.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -159,6 +161,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 002
 
 **Critérios de Aceitação:**
+
 - [ ] Entrada de dados: E-mail, Senha
 - [ ] Validação de credenciais
 - [ ] Criação de sessão ao autenticar
@@ -168,7 +171,7 @@ O sistema deve:
 
 #### RF-003: Login de Administrador
 
-**Descrição:** Permitir que administradores façam login e acessem o painel administrativo
+**Descrição:** Permitir que administradores façam login e acessem o painel administrativo.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -176,6 +179,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 003
 
 **Critérios de Aceitação:**
+
 - [ ] Entrada de dados: E-mail, Senha
 - [ ] Validação de credenciais de administrador
 - [ ] Acesso restrito ao painel admin
@@ -185,7 +189,7 @@ O sistema deve:
 
 #### RF-004: Cadastro de Produto
 
-**Descrição:** Permitir que administradores cadastrem novos produtos
+**Descrição:** Permitir que administradores cadastrem novos produtos.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -193,6 +197,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 004
 
 **Critérios de Aceitação:**
+
 - [ ] Entrada de dados: Nome, Categoria, Preço, Quantidade
 - [ ] Validação de campos obrigatórios
 - [ ] Verificação de duplicidade
@@ -202,7 +207,7 @@ O sistema deve:
 
 #### RF-005: Listagem de Produtos
 
-**Descrição:** Exibir os produtos cadastrados no sistema
+**Descrição:** Exibir os produtos cadastrados no sistema.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -210,6 +215,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 005
 
 **Critérios de Aceitação:**
+
 - [ ] Listagem de todos os produtos
 - [ ] Saída: Id, Nome, Categoria, Preço, Quantidade
 
@@ -217,7 +223,7 @@ O sistema deve:
 
 #### RF-006: Edição de Produto
 
-**Descrição:** Permitir que administradores editem os dados de produtos existentes
+**Descrição:** Permitir que administradores editem os dados de produtos existentes.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -225,6 +231,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 006
 
 **Critérios de Aceitação:**
+
 - [ ] Verificar se o produto está cadastrado
 - [ ] Entrada de dados: Nome, Categoria, Preço, Quantidade
 - [ ] Validação de campos
@@ -234,7 +241,7 @@ O sistema deve:
 
 #### RF-007: Exclusão de Produto
 
-**Descrição:** Permitir que administradores excluam produtos do sistema
+**Descrição:** Permitir que administradores excluam produtos do sistema.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -242,6 +249,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 007
 
 **Critérios de Aceitação:**
+
 - [ ] Verificar se o produto existe
 - [ ] Confirmação antes da exclusão
 - [ ] Saída: Notificação de sucesso ou erro
@@ -250,7 +258,7 @@ O sistema deve:
 
 #### RF-008: Registro de Venda
 
-**Descrição:** Permitir o registro de vendas vinculadas a clientes e produtos
+**Descrição:** Permitir o registro de vendas vinculadas a clientes e produtos.
 
 - **Prioridade:** Alta
 - **Versão:** 1.0
@@ -258,6 +266,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 008
 
 **Critérios de Aceitação:**
+
 - [ ] Venda associada a cliente e produto cadastrados
 - [ ] Verificação de quantidade em estoque
 - [ ] Cálculo automático do valor total
@@ -268,7 +277,7 @@ O sistema deve:
 
 #### RF-009: Listagem de Vendas
 
-**Descrição:** Exibir o histórico de vendas realizadas
+**Descrição:** Exibir o histórico de vendas realizadas.
 
 - **Prioridade:** Média
 - **Versão:** 1.0
@@ -276,6 +285,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 009
 
 **Critérios de Aceitação:**
+
 - [ ] Listagem de todas as vendas registradas
 - [ ] Saída: Id da venda, cliente, produto, quantidade, valor total
 
@@ -283,7 +293,7 @@ O sistema deve:
 
 #### RF-010: Listagem de Clientes (Admin)
 
-**Descrição:** Permitir que administradores visualizem os clientes cadastrados
+**Descrição:** Permitir que administradores visualizem os clientes cadastrados.
 
 - **Prioridade:** Média
 - **Versão:** 1.0
@@ -291,6 +301,7 @@ O sistema deve:
 - **Rastreabilidade:** Necessidade do Stakeholder 010
 
 **Critérios de Aceitação:**
+
 - [ ] Acesso restrito a administradores
 - [ ] Saída: Id, Nome, E-mail, Telefone
 
@@ -300,7 +311,7 @@ O sistema deve:
 
 #### RNF-001: Usabilidade
 
-**Descrição:** Interface organizada, profissional e intuitiva para clientes e administradores
+**Descrição:** Interface organizada, profissional e intuitiva para clientes e administradores.
 
 ---
 
@@ -312,50 +323,50 @@ O sistema deve:
 
 #### RNF-003: Tecnologia de Back-end
 
-**Descrição:** Desenvolvimento do back-end utilizando PHP
+**Descrição:** Desenvolvimento do back-end utilizando PHP.
 
 ---
 
 #### RNF-004: Banco de Dados
 
-**Descrição:** Utilização de PostgreSQL como sistema de gerenciamento de banco de dados
+**Descrição:** Utilização de PostgreSQL como sistema de gerenciamento de banco de dados.
 
 ---
 
 #### RNF-005: Consistência Visual
 
-**Descrição:** CSS padrão aplicado a todas as páginas do sistema
+**Descrição:** CSS padrão aplicado a todas as páginas do sistema.
 
 ---
 
 #### RNF-006: Controle de Acesso
 
-**Descrição:** Utilização de sessões PHP para controlar o acesso às áreas protegidas
+**Descrição:** Utilização de sessões PHP para controlar o acesso às áreas protegidas.
 
 ---
 
 #### RNF-007: Confiabilidade
 
-**Descrição:** Validação de entrada de dados obrigatória em todas as operações críticas
+**Descrição:** Validação de entrada de dados obrigatória em todas as operações críticas.
 
 ---
 
 ## 4. Regras de Negócio
 
-| Regra de Negócio | Descrição                                                                      |
-| ---------------- | ------------------------------------------------------------------------------ |
-| RN-001           | Um cliente deve possuir nome, e-mail, telefone e senha                         |
-| RN-002           | Um administrador deve possuir nome, e-mail e senha                             |
-| RN-003           | Apenas administradores podem cadastrar, editar e excluir produtos              |
-| RN-004           | Apenas administradores podem visualizar todos os clientes cadastrados          |
-| RN-005           | Um produto deve possuir nome, quantidade, categoria e preço                    |
-| RN-006           | Preço e quantidade de produtos não podem ser negativos                         |
-| RN-007           | Uma venda deve estar relacionada a um cliente e a um produto cadastrados       |
-| RN-008           | Não pode ser registrada uma venda sem informar cliente, produto e quantidade   |
-| RN-009           | Não pode ser realizada uma venda se a quantidade solicitada for maior que o estoque disponível |
-| RN-010           | Após uma venda, a quantidade do produto deve ser atualizada no estoque         |
-| RN-011           | O sistema deve calcular o valor total da venda automaticamente                 |
-| RN-012           | O sistema deve exibir mensagens de erro ou sucesso em todas as operações       |
+| Regra de Negócio | Descrição |
+| --- | --- |
+| RN-001 | Um cliente deve possuir nome, e-mail, telefone e senha |
+| RN-002 | Um administrador deve possuir nome, e-mail e senha |
+| RN-003 | Apenas administradores podem cadastrar, editar e excluir produtos |
+| RN-004 | Apenas administradores podem visualizar todos os clientes cadastrados |
+| RN-005 | Um produto deve possuir nome, quantidade, categoria e preço |
+| RN-006 | Preço e quantidade de produtos não podem ser negativos |
+| RN-007 | Uma venda deve estar relacionada a um cliente e a um produto cadastrados |
+| RN-008 | Não pode ser registrada uma venda sem informar cliente, produto e quantidade |
+| RN-009 | Não pode ser realizada uma venda se a quantidade solicitada for maior que o estoque disponível |
+| RN-010 | Após uma venda, a quantidade do produto deve ser atualizada no estoque |
+| RN-011 | O sistema deve calcular o valor total da venda automaticamente |
+| RN-012 | O sistema deve exibir mensagens de erro ou sucesso em todas as operações |
 
 ---
 
@@ -450,7 +461,7 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    Início --> VerificarEstoque
+    Inicio --> VerificarEstoque
     VerificarEstoque --> EstoqueSuficiente{Estoque suficiente?}
     EstoqueSuficiente -- Sim --> RegistrarVenda
     EstoqueSuficiente -- Não --> NotificarErro
@@ -464,7 +475,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Início --> VerificarDuplicidade
+    Inicio --> VerificarDuplicidade
     VerificarDuplicidade --> ProdutoExiste{Produto já existe?}
     ProdutoExiste -- Sim --> NotificarErro
     ProdutoExiste -- Não --> CadastrarProduto
@@ -479,12 +490,12 @@ flowchart TD
 
 ### 6.1 Tabelas do Sistema
 
-| Tabela         | Descrição                                    |
-| -------------- | -------------------------------------------- |
-| clientes       | Armazena dados dos clientes cadastrados      |
-| administradores| Armazena dados dos administradores           |
-| produtos       | Armazena dados dos produtos da loja          |
-| vendas         | Armazena os registros de vendas realizadas   |
+| Tabela | Descrição |
+| --- | --- |
+| clientes | Armazena dados dos clientes cadastrados |
+| administradores | Armazena dados dos administradores |
+| produtos | Armazena dados dos produtos da loja |
+| vendas | Armazena os registros de vendas realizadas |
 
 ---
 
@@ -513,7 +524,3 @@ flowchart LR
     RF-009 --> UC6
     RF-010 --> UC5
 ```
-
-## Autor 
-
-Gabriel Gomes de Queiroz
