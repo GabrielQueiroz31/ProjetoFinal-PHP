@@ -32,42 +32,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Login de Cliente - GaluBikeShop</title>
+    <title>GaluBikeShop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="card">
+    <h1>GaluBikeShop</h1>
 
-        <div class="logo">
-            LOGO
-        </div>
+    <p>Loja de produtos para bicicletas.</p>
 
-        <?php echo $mensagem; ?>
+    <a href="cliente/login_cliente.php">Área do Cliente</a>
 
-        <form method="POST">
-            <div class="form-grupo">
-                <label>Email:</label>
-                <input type="email" name="email">
-            </div>
+    <br><br>
 
-            <div class="form-grupo">
-                <label>Senha:</label>
-                <input type="password" name="senha">
-            </div>
-
-            <div class="botao-area">
-                <button type="submit">Entrar</button>
-            </div>
-        </form>
-
-        <div class="link">
-            <a href="cadastro_cliente.php">Criar conta</a>
-        </div>
-
-    </div>
-</div>
+    <a href="admin/login_admin.php">Área do Administrador</a>   
 
 </body>
 </html>

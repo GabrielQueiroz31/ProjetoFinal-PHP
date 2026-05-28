@@ -1,8 +1,14 @@
 <?php
 
-require_once "conexao.php";
+session_start();
+require_once "../conexao.php";
 
-$sql = "SELECT * FROM clientes ORDER BY id ASC";
+if (!isset($_SESSION["admin_id"])) {
+    header("Location: login_admin.php");
+    exit;
+}
+
+$sql = "SELECT id, nome, email, telefone FROM clientes ORDER BY id ASC";
 $stmt = $conexao->prepare($sql);
 $stmt->execute();
 
@@ -15,7 +21,7 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Clientes - GaluBikeShop</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -24,8 +30,6 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <h1>Clientes cadastrados</h1>
 
-        <a href="cadastro_cliente.php" class="btn">Cadastrar novo cliente</a>
-
         <table>
             <thead>
                 <tr>
@@ -33,7 +37,6 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
-                    <th>Ações</th>
                 </tr>
             </thead>
 
@@ -44,14 +47,14 @@ $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $cliente["nome"]; ?></td>
                         <td><?php echo $cliente["email"]; ?></td>
                         <td><?php echo $cliente["telefone"]; ?></td>
-                        <td>
-                            <a href="editar_cliente.php?id=<?php echo $cliente["id"]; ?>" class="btn">Editar</a>
-                            <a href="excluir_cliente.php?id=<?php echo $cliente["id"]; ?>" class="btn btn-danger">Excluir</a>
-                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <br>
+
+        <a href="painel_admin.php">Voltar para o painel</a>
 
     </div>
 </div>
